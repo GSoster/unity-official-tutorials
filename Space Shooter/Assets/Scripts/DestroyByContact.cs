@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class DestroyByContact : MonoBehaviour {
 
-	void OnTriggerEnter(Collider other){
-		//Debug.Log (other.name);//debugging
-		if(other.tag == "Boundary"){//we will not destroy if the contact is with Boundary
+	public GameObject explosion;
+	public GameObject playerExplosion;
+
+
+	void OnTriggerEnter(Collider other) 
+	{
+		if (other.tag == "Boundary")
+		{
 			return;
+		}
+		Instantiate(explosion, transform.position, transform.rotation);
+		if (other.tag == "Player") {
+			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 		}
 		Destroy(other.gameObject);
 		Destroy(gameObject);
