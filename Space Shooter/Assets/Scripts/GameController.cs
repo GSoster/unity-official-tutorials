@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 	//this script is responsible for spawning the hazards
@@ -12,9 +13,18 @@ public class GameController : MonoBehaviour {
 	public float startWait;//wait time when the game first start so the player can get ready;
 	public float waveWait;//how much time we await between waves
 
+
+
+	public GUIText scoreText;//to display the score
+	private int score;
+
 	//it is called in the first frame when this object is instantiated
 	void Start(){
+		score = 0;
+		scoreText =  GetComponent<GUIText>();
 		StartCoroutine (SpawnWaves ());
+
+
 	}
 
 	//coroutines need to return an IEnumerator
@@ -31,6 +41,22 @@ public class GameController : MonoBehaviour {
 			yield return new WaitForSeconds (waveWait);//wait time between waves
 		}
 
+	}
+
+	//public to be accessed by other scripts
+	public void AddScore(int newScoreValue){
+		score += newScoreValue;
+		if (scoreText != null) {
+			UpdateScore ();
+		} else 
+		{
+			Debug.Log ("Couldn't find scoreText(GUIText) in 'GameController' script");
+		}
+
+	}
+
+	void UpdateScore(){
+		scoreText.text = "Score: " + score;
 	}
 
 }
