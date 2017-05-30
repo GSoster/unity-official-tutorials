@@ -15,13 +15,20 @@ public class GameController : MonoBehaviour {
 
 
 
-	public GUIText scoreText;//to display the score
+	//public GUIText scoreText;//to display the score
+	private Text scoreText;//to display the score
+	public GameObject canvas;//holds the text that displays the score
 	private int score;
 
 	//it is called in the first frame when this object is instantiated
 	void Start(){
 		score = 0;
-		scoreText =  GetComponent<GUIText>();
+		scoreText = canvas.GetComponent<Text>();//gets the Text component from the canvas
+
+
+		if (scoreText == null) {
+			Debug.Log ("Não foi possível instanciar Text");
+		}
 		StartCoroutine (SpawnWaves ());
 
 
@@ -50,7 +57,7 @@ public class GameController : MonoBehaviour {
 			UpdateScore ();
 		} else 
 		{
-			Debug.Log ("Couldn't find scoreText(GUIText) in 'GameController' script");
+			Debug.Log ("Couldn't find scoreText(Text) in 'GameController' script");
 		}
 
 	}

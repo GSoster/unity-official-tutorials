@@ -8,7 +8,7 @@ public class Mover : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
-		if (speed == 0 || speed == null) {
+		if (speed == 0) {
 			speed = 20;
 		}
 

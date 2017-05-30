@@ -7,16 +7,16 @@ public class Boundary{
 
 	public Boundary ()
 	{
-		if (xMin == 0 || xMin == null) {
+		if (xMin == 0) {
 			xMin = -6;
 		}
-		if (xMax == 0 || xMax == null) {
+		if (xMax == 0) {
 			xMax = 6;
 		}
-		if (zMin == 0 || zMin == null) {
+		if (zMin == 0) {
 			zMin = -4;
 		}
-		if (zMax == 0 || zMax == null) {
+		if (zMax == 0) {
 			zMax = 8;
 		}
 	}
@@ -52,11 +52,11 @@ public class PlayerController : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		audioSource = GetComponent<AudioSource >();
 
-		if(speed == null || speed == 0){
+		if(speed == 0){
 			speed = 10;
 		}
 
-		if (tilt == null || tilt == 0) {
+		if (tilt == 0) {
 			tilt = 2.3f;
 		}
 	}
