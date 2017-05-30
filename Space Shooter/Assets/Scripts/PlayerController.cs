@@ -35,10 +35,13 @@ public class PlayerController : MonoBehaviour {
 	public float fireRate;
 	private float nextFire;
 
+	private AudioSource audioSource;//sound from the shot/bolt
+
 	void Update(){
 		if (Input.GetButton("Fire1") && Time.time > nextFire) {
 			nextFire = Time.time + fireRate;
 			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
+			audioSource.Play ();
 		}
 
 	}
@@ -47,6 +50,8 @@ public class PlayerController : MonoBehaviour {
 	void Start(){
 		boundary = new Boundary ();
 		rb = GetComponent<Rigidbody> ();
+		audioSource = GetComponent<AudioSource >();
+
 		if(speed == null || speed == 0){
 			speed = 10;
 		}
