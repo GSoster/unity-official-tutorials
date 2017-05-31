@@ -6,9 +6,11 @@ public class Mover : MonoBehaviour {
 	public float speed;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		rb = GetComponent<Rigidbody> ();
-		if (speed == 0) {
+		if (speed == 0)
+		{
 			speed = 20;
 		}
 
@@ -16,9 +18,5 @@ public class Mover : MonoBehaviour {
 		rb.velocity = transform.forward * speed;
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

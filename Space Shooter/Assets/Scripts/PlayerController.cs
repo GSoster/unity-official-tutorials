@@ -38,7 +38,8 @@ public class PlayerController : MonoBehaviour {
 	private AudioSource audioSource;//sound from the shot/bolt
 
 	void Update(){
-		if (Input.GetButton("Fire1") && Time.time > nextFire) {
+		if (Input.GetButton("Fire1") && Time.time > nextFire)
+		{
 			nextFire = Time.time + fireRate;
 			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
 			audioSource.Play ();
@@ -47,22 +48,26 @@ public class PlayerController : MonoBehaviour {
 	}
 
 
-	void Start(){
+	void Start()
+	{
 		boundary = new Boundary ();
 		rb = GetComponent<Rigidbody> ();
 		audioSource = GetComponent<AudioSource >();
 
-		if(speed == 0){
+		if(speed == 0)
+		{
 			speed = 10;
 		}
 
-		if (tilt == 0) {
+		if (tilt == 0) 
+		{
 			tilt = 2.3f;
 		}
 	}
 
 	//it is run before every frame being draw
-	void FixedUpdate(){
+	void FixedUpdate()
+	{
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 		Vector3 movement =  new Vector3 (moveHorizontal, 0.0f, moveVertical);
