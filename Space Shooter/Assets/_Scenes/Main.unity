@@ -718,7 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2edc56b88d896439729d5f4568c02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 1000012413789640, guid: bbe3e8e15f5feae4597d735f0b72a55f, type: 2}
+  shot: {fileID: 1002182546761574, guid: 00069d40c8610d8478522c93b5d8b1aa, type: 2}
   shotSpawn: {fileID: 1993837555}
   fireRate: 1
   waitTime: 1
@@ -1512,7 +1512,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1993837554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 2.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1041642748}

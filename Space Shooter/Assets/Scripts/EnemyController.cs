@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		audioSource = GetComponent<AudioSource >();
+		Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
 	}
 	
 	// Update is called once per frame
