@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour {
 	public float spawnWait;//wait time between one spawn hazard and another
 	public float startWait;//wait time when the game first start so the player can get ready;
 	public float waveWait;//how much time we await between waves
-
+	public GameObject[] hazards;
 
 	// ##### GUI ##########
 	//public GUIText scoreText;//to display the score
@@ -67,7 +67,11 @@ public class GameController : MonoBehaviour {
 			{
 				Vector3 spawnPosition = new Vector3 (Random.Range(-spawnValues.x, spawnValues.x),spawnValues.y,spawnValues.z);
 				Quaternion spawnRotation = Quaternion.identity;//Quaternion.identity means no rotation
-				Instantiate (hazard, spawnPosition, spawnRotation);
+
+				//gets one random hazard to instantiate:
+				int hazardIndex = Random.Range(0, hazards.Length);
+				Instantiate (hazards[hazardIndex], spawnPosition, spawnRotation);
+				//Instantiate (hazard, spawnPosition, spawnRotation);
 				yield return new WaitForSeconds (spawnWait);//coroutine, wait time between new Asteroids
 			}	
 			yield return new WaitForSeconds (waveWait);//wait time between waves
