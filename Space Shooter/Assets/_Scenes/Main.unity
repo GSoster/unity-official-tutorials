@@ -404,7 +404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d333d08b01685d744a3a15805ee4d310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazard: {fileID: 1885939114980522, guid: c35fefaa57a36e743be1ea713d5df2a4, type: 2}
   spawnValues: {x: 6, y: 0, z: 16}
   hazardCount: 10
   spawnWait: 0.5
@@ -413,6 +412,8 @@ MonoBehaviour:
   hazards:
   - {fileID: 1885939114980522, guid: c35fefaa57a36e743be1ea713d5df2a4, type: 2}
   - {fileID: 1287268114235388, guid: 4fdd453d0a8797b4fa243dfc62e274aa, type: 2}
+  - {fileID: 1045157449523688, guid: 150152404a609704e87fdf0ed470e562, type: 2}
+  - {fileID: 1166179917512460, guid: b95f64692e9be6f419d326142d7e278a, type: 2}
   scoreTextCanvas: {fileID: 690439722}
   restartTextCanvas: {fileID: 1189954720}
   gameOverTextCanvas: {fileID: 1079173373}
