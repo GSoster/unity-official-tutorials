@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114967721952025876}
   - component: {fileID: 114787556894091562}
   - component: {fileID: 114459721587839224}
+  - component: {fileID: 114770143077192718}
   m_Layer: 0
   m_Name: EnemyShip
   m_TagString: Untagged
@@ -285,6 +286,28 @@ MonoBehaviour:
   explosion: {fileID: 100012, guid: 384371afbb4354cc9a3fc68eab303756, type: 2}
   playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
   scoreValue: 25
+--- !u!114 &114770143077192718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287268114235388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8b63aeefe911c4bbf4aa76d6ba7ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dodge: 5
+  smoothing: 7.5
+  startWait: {x: 0.5, y: 1}
+  maneuverTime: {x: 1, y: 2}
+  maneuverWait: {x: 1, y: 2}
+  boundary:
+    xMin: -6
+    xMax: 6
+    zMin: -20
+    zMax: 20
+  tilt: 10
 --- !u!114 &114787556894091562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,9 +321,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 1002182546761574, guid: 00069d40c8610d8478522c93b5d8b1aa, type: 2}
   shotSpawn: {fileID: 4009810301680976}
-  fireRate: 1
+  fireRate: 0.8
   waitTime: 1
-  shouldShoot: 0
 --- !u!114 &114967721952025876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4b64cfe1be71e47bb83e38c927d6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -4
+  speed: -5
 --- !u!136 &136058664841199542
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -7,28 +7,23 @@ public class EnemyController : MonoBehaviour {
 	//this script allows the enemy to shoot
 	public GameObject shot;
 	public Transform shotSpawn;
-	public float fireRate;
-	private float nextFire;
+	public float fireRate;//0.5 means shoot 2 times every second... 1 means 1 shot per second, etc
 	public float waitTime;//a time to the player gets ready
-	public bool shouldShoot;
 
 	private AudioSource audioSource;//sound from the shot/bolt
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		audioSource = GetComponent<AudioSource >();
-		Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
+		//InvokeRepeating = Invokes the method methodName in time seconds, then repeatedly every repeatRate seconds.
+		InvokeRepeating("Fire", waitTime, fireRate);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		//while (shouldShoot) {
-			if (Time.time > nextFire)
-			{
-				nextFire = Time.time + fireRate;
-				//Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
-				//audioSource.Play ();
-			}
-		//}
+		
+
+	void Fire()
+	{
+		Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
+		audioSource.Play ();
 	}
 }
