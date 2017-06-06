@@ -10,4 +10,7 @@ In your first foray into Unity development, create a simple rolling ball game th
 - [x] **Space Shooter**      
 *Unity Version: 5.6.1*  
 [Link to tutorial](https://unity3d.com/learn/tutorials/projects/space-shooter-tutorial)    
-**Description**: Using basic assets provided by Unity Technologies, built-in components and writing simple custom code, understand how to work with imported Mesh Models, Audio, Textures and Materials while practicing more complicated Scripting principles
+**Description**: Using basic assets provided by Unity Technologies, built-in components and writing simple custom code, understand how to work with imported Mesh Models, Audio, Textures and Materials while practicing more complicated Scripting principles.  
+In-game image:  
+![image](https://user-images.githubusercontent.com/6067175/26846415-f7dfcc8a-4acf-11e7-889f-086c30e665b2.png)
+
