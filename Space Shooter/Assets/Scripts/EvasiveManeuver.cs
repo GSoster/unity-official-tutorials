@@ -17,9 +17,12 @@ public class EvasiveManeuver : MonoBehaviour {
 	//tilting effect
 	public float tilt;
 
+	//to follow the player, lets try to get into his X position
+	private Transform playerTransform;
 
 	void Start () 
 	{
+		playerTransform = GameObject.FindGameObjectWithTag ("Player").transform;
 		rb = GetComponent<Rigidbody> ();
 		currentSpeed = rb.velocity.z;
 		StartCoroutine(Evade());	
@@ -35,7 +38,12 @@ public class EvasiveManeuver : MonoBehaviour {
 			//Mathf.Sign = the "Sign" positive/negative of the value in the argument
 			// - Mathf.Sign reverse the sign
 			// - Mathf.Sign(transform.position.x) will return the opposite sign value to the x position. if +1 will return -1
-			targetManeuver = Random.Range (1, dodge) * - Mathf.Sign (transform.position.x);
+			if (playerTransform != null) {
+				targetManeuver = playerTransform.position.x;
+			} else {
+				targetManeuver = Random.Range (1, dodge) * - Mathf.Sign (transform.position.x);
+			}
+
 			yield return new WaitForSeconds (Random.Range(maneuverTime.x, maneuverTime.y));
 			targetManeuver = 0;
 			yield return new WaitForSeconds (Random	.Range(maneuverWait.x, maneuverWait.y));
