@@ -24,6 +24,10 @@ public class GameController : MonoBehaviour {
 	public GameObject gameOverTextCanvas;
 	private bool gameOver;
 
+	public GameObject waveCountTextCanvas;
+	public int maxWaves;
+	private int waveCount = 0;
+
 
 
 	//it is called in the first frame when this object is instantiated
@@ -62,6 +66,9 @@ public class GameController : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (startWait);//wait time in the start of the game, to the player get ready
 		while(true){
+			//TODO
+			waveCount++;//increments the waveCount until max wave allowed
+			UpdateWaveCountGUIText();
 			for(int i = 0; i < hazardCount; i++)
 			{
 				Vector3 spawnPosition = new Vector3 (Random.Range(-spawnValues.x, spawnValues.x),spawnValues.y,spawnValues.z);
@@ -72,7 +79,6 @@ public class GameController : MonoBehaviour {
 				yield return new WaitForSeconds (spawnWait);//coroutine, wait time between new Asteroids
 			}	
 			yield return new WaitForSeconds (waveWait);//wait time between waves
-
 			if (gameOver)
 			{
 				restartTextCanvas.GetComponent<Text>().text = "Press 'R' for Restart";
@@ -104,6 +110,11 @@ public class GameController : MonoBehaviour {
 		scoreText.text = "Score: " + score;
 	}
 
+	void UpdateWaveCountGUIText()
+	{
+		waveCountTextCanvas.GetComponent<Text>().text = "Wave " + waveCount.ToString() + "/" + maxWaves.ToString();
+	}
+
 	void SetupGui()
 	{
 		gameOver = false;
@@ -112,6 +123,7 @@ public class GameController : MonoBehaviour {
 		scoreText = scoreTextCanvas.GetComponent<Text>();//gets the Text component from the canvas
 		restartTextCanvas.GetComponent<Text>().text = "";
 		gameOverTextCanvas.GetComponent<Text>().text = "";
+		waveCountTextCanvas.GetComponent<Text>().text = "Wave 0/" + maxWaves.ToString();
 	}
 
 	public void GameOver()
