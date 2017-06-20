@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Boundary
+  - Player_PowerUp_Shield
+  - PowerUp
   layers:
   - Default
   - TransparentFX
