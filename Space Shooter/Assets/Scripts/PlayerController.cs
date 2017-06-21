@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour {
 
 	private AudioSource audioSource;//sound from the shot/bolt
 
+
+	//powerUps
+	public int shieldValue = 0;
+
 	void Update()
 	{
 		if (Input.GetButton("Fire1") && Time.time > nextFire)

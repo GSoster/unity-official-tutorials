@@ -24,13 +24,19 @@ public class PowerUpController : MonoBehaviour {
 		}
 		if (other.tag == "Player") 
 		{
+			//#################################
+			//SHIELD ONLY
 			Destroy(gameObject);//destroi o powerup que o player pegou
 			//GameObject.FindGameObjectWithTag("Player_PowerUp_Shield").GetComponent<ParticleSystem>().enableEmission = true;//ativa a emissao de particulas do powerup do player
 			//As linhas de baixo sao equivalentes a de cima, apenas sao voltadas para a versao mais nova da unity. explicacao aqui: https://forum.unity3d.com/threads/enabling-emission.364258/
 			ParticleSystem.EmissionModule emissionModule = GameObject.FindGameObjectWithTag ("Player_PowerUp_Shield").GetComponent<ParticleSystem> ().emission;
+			var player = GameObject.FindGameObjectWithTag ("Player");
+			var playerScript = (PlayerController)player.GetComponent (typeof (PlayerController));
+			playerScript.shieldValue = 2;
 			emissionModule.enabled = true;
-
 			//gameController.AddScore (scoreValue);//powerUps dão pontos?
+			//#################################
+			// END OF SHIELD ONLY
 		}
 	}
 }
