@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour {
 
 
 	//powerUps
-	public int shieldValue = 0;
+	public float shieldValue = 0;
 
 	void Update()
 	{

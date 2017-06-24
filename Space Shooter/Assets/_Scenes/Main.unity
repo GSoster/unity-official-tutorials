@@ -332,7 +332,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2086411065
+  randomSeed: 1091605250
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -484,7 +484,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -971,7 +971,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -7751,6 +7751,7 @@ MonoBehaviour:
   shot: {fileID: 1000012413789640, guid: bbe3e8e15f5feae4597d735f0b72a55f, type: 2}
   shotSpawn: {fileID: 965388928}
   fireRate: 0.25
+  shieldValue: 0
 --- !u!82 &1578360899
 AudioSource:
   m_ObjectHideFlags: 0

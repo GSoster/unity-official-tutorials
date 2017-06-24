@@ -35,6 +35,15 @@ public class DestroyByContact : MonoBehaviour {
 		Instantiate(explosion, transform.position, transform.rotation);
 		if (other.tag == "Player") 
 		{
+			//veriricar se existe escudo, se sim dimiunir valor do escudo e seguir em frente. Se não então destruir player.
+			var playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+			if (playerController.shieldValue > 0) 
+			{
+				ParticleSystem.MainModule psMain= GameObject.FindGameObjectWithTag ("Player_PowerUp_Shield").GetComponent<ParticleSystem> ().main;
+				psMain.startSize = 0;
+				playerController.shieldValue = 0;
+				return;//from the function, not from the IF
+			}
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			gameController.GameOver ();
 		}
