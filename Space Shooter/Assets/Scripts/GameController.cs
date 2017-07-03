@@ -23,9 +23,12 @@ public class GameController : MonoBehaviour {
 	private bool restart;
 	public GameObject gameOverTextCanvas;
 	private bool gameOver;
+	public GameObject stageClearTextCanvas;
+	private bool stageClear;
 
 	public GameObject waveCountTextCanvas;
-	public int maxWaves;
+	public const int maxWaves = 5;
+	[SerializeField]
 	private int waveCount = 0;
 
 
@@ -67,6 +70,10 @@ public class GameController : MonoBehaviour {
 		yield return new WaitForSeconds (startWait);//wait time in the start of the game, to the player get ready
 		while(true){
 			//TODO
+			if(waveCount == maxWaves){
+				StageClear ();
+				break;
+			}
 			waveCount++;//increments the waveCount until max wave allowed
 			UpdateWaveCountGUIText();
 			for(int i = 0; i < hazardCount; i++)
@@ -81,8 +88,7 @@ public class GameController : MonoBehaviour {
 			yield return new WaitForSeconds (waveWait);//wait time between waves
 			if (gameOver)
 			{
-				restartTextCanvas.GetComponent<Text>().text = "Press 'R' for Restart";
-				restart = true;
+				GameOver ();
 				break;//goes out of the loop
 			}
 
@@ -124,12 +130,23 @@ public class GameController : MonoBehaviour {
 		restartTextCanvas.GetComponent<Text>().text = "";
 		gameOverTextCanvas.GetComponent<Text>().text = "";
 		waveCountTextCanvas.GetComponent<Text>().text = "Wave 0/" + maxWaves.ToString();
+		stageClearTextCanvas.GetComponent<Text> ().enabled = false;
 	}
 
 	public void GameOver()
 	{
 		gameOverTextCanvas.GetComponent<Text> ().text = "Game Over!";
 		gameOver = true;
+		restartTextCanvas.GetComponent<Text>().text = "Press 'R' for Restart";
+		restart = true;//it will be used in the Update method to check if the R button press should be acceptable.
 	}
+
+	public void StageClear()
+	{
+		stageClearTextCanvas.GetComponent<Text> ().text = "Stage Clear!";
+		stageClearTextCanvas.GetComponent<Text> ().enabled = true;
+		stageClear = true;
+	}
+
 
 }
