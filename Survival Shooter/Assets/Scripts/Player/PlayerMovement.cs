@@ -2,12 +2,13 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-	public float speed = 6f;
-	Vector3 movement;
-	Animator anim;
-	Rigidbody playerRigidbody;
-	int floorMask;
-	float camRayLength = 100f;
+	public float speed = 6f;            // The speed that the player will move at.
+
+	Vector3 movement;                   // The vector to store the direction of the player's movement.
+	Animator anim;                      // Reference to the animator component.
+	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
+	int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
+	float camRayLength = 100f;          // The length of the ray from the camera into the scene.
 
 	// 
 	void Awake()
@@ -58,11 +59,13 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	void Animating(float h, float v)
+	void Animating (float h, float v)
 	{
-		//if is there movement, then it is walking:
-		bool isWalking = h != 0f || v != 0f;
-		anim.SetBool ("IsWalking", isWalking);//set the value to the parameter in the Animator Controller (playerAC)
+		// Create a boolean that is true if either of the input axes is non-zero.
+		bool walking = h != 0f || v != 0f;
+
+		// Tell the animator whether or not the player is walking.
+		anim.SetBool ("IsWalking", walking);
 	}
 
 }
