@@ -42,7 +42,7 @@ public class DestroyByContact : MonoBehaviour {
 				ParticleSystem.MainModule psMain= GameObject.FindGameObjectWithTag ("Player_PowerUp_Shield").GetComponent<ParticleSystem> ().main;
 				psMain.startSize = 0;
 				playerController.shieldValue = 0;
-				return;//from the function, not from the IF
+				return;//from the OnTriggerEvent function, not from the IF
 			}
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			gameController.GameOver ();

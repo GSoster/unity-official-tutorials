@@ -3720,6 +3720,7 @@ MonoBehaviour:
   gameOverTextCanvas: {fileID: 1079173373}
   stageClearTextCanvas: {fileID: 1029447494}
   waveCountTextCanvas: {fileID: 1826094532}
+  waveCount: 0
 --- !u!82 &742693684
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7928,6 +7929,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1578360900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1578360894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b717150e952fc849930f7f90eb0a632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  healthSlider: {fileID: 0}
+  gameController: {fileID: 742693683}
+  playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
 --- !u!1 &1826094532
 GameObject:
   m_ObjectHideFlags: 0
