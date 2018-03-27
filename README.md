@@ -22,3 +22,8 @@ Improved version (already has powerupps (purple shield in the image, waves, stag
 **Description**: Learn how to make an Isometric 3D shooter.  
 In-game image:  
 ![image](https://user-images.githubusercontent.com/6067175/28508136-1e19d652-700f-11e7-87b0-f4cda4641e9f.png)
+
+- [x] **UFO 2D**   
+*Unity Version: 5.6.1*  
+[Link to tutorial](https://unity3d.com/learn/tutorials/s/2d-ufo-tutorial)    
+![image](https://user-images.githubusercontent.com/6067175/38000418-d8514cf2-31fd-11e8-98e9-0f3457749c50.png)
