@@ -27,3 +27,7 @@ In-game image:
 *Unity Version: 5.6.1*  
 [Link to tutorial](https://unity3d.com/learn/tutorials/s/2d-ufo-tutorial)    
 ![image](https://user-images.githubusercontent.com/6067175/38000418-d8514cf2-31fd-11e8-98e9-0f3457749c50.png)
+
+
+- 2D Unity Guide  
+[Collection of resources](https://unity3d.com/2d/solution-guide?_ga=2.200645927.807507202.1549832207-129103814.1549832207&_gac=1.185955547.1549832207.Cj0KCQiAtP_iBRDGARIsAEWJA8ixqHYj39BnGE2kQ4CuKZWUqo5w6-x9R92WqpjSfmt75lE1cYdfHpoaAgp7EALw_wcB)
